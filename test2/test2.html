@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 100%;
+            border: 1px solid black;
+            position: relative;
+            margin: 20px 20px;
+        }
+        .ball{
+            width:100px;
+            height:100px;
+            border-radius: 50px;
+            background: red;
+            transition: all 4s ease-in;
+        }
+        .ball:hover{
+            margin-left: 80%;
+            rotate(720deg);
+        }
+        .imgbox{
+            width: 220px;
+            height:220px;
+            border: 1px solid black;
+            position: relative;
+            margin: 20px 20px;
+            display: inline-block;
+        }
+        .imgbox img{
+            position: absolute;
+            top:10px;
+            left:10px;
+        }
+        img.img-top{
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+            -webkit-transition: opacity 1s ease-in-out;
+            -moz-transition: opacity 1s ease-in-out;
+            z-index: 1000;
+        }
+        img.img-top:hover{
+            opacity: 0;
+            filter: alpha(opacity=0);
+        }
+        img.img-scale{
+            transition: all 1s ease-in-out;
+        }
+        .img-on-top{
+            z-index: 1000;
+        }
+        .img-on-bottom{
+            transform: scale(0,0);
+        }
+        .imgbox1:hover .img-on-top{
+            transform: scale(0, 0);
+            transform-origin: bottom left;
+        }
+        .imgbox1:hover .img-on-bottom{
+            transform: scale(1, 1);
+            transform-origin: top right;
+        }
+        .imgbox2 .img-rotate-bottom{
+            transform: scale(1,0);
+        }
+        .imgbox2:hover .img-rotate-top{
+            transform: rotate(360deg) scale(0,0);
+        }
+        .imgbox2:hover .img-rotate-bottom{
+            transform:scale(1,1);
+        }
+        .img-rotate{
+            transition: all 1s ease-in-out;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="ball"></div>
+</div>
+<div class="imgbox">
+    <img src="./7.jpg" class="img-top"/>
+    <img src="./8.jpg"/>
+</div>
+<div class="imgbox imgbox1">
+    <img src="./7.jpg" class="img-scale img-on-top"/>
+    <img src="./8.jpg" class="img-scale img-on-bottom"/>
+</div>
+<div class="imgbox imgbox2">
+    <img src="./7.jpg" class="img-rotate img-rotate-top"/>
+    <img src="./8.jpg" class="img-rotate img-rotate-bottom"/>
+</div>
+
+</body>
+</html>

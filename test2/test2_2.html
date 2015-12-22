@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../jquery.min.js"></script>
+    <title></title>
+    <style>
+        .stage{
+            border:1px solid black;
+            width: 900px;
+            min-height: 200px;
+            margin: 200px auto;
+            perspective: 800px;
+            perspective-origin: 50% 20%;
+            background-color: #f0f0f0;
+            padding: 100px 50px;
+            position: relative;
+        }
+        .container {
+            transform-style: preserve-3d;
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            transition: transform 1s;
+            left: 50%;
+            margin-left: -100px;
+        }
+        .container img{
+            position: absolute;
+            bottom: 80px;
+            box-shadow: 0 1px 3px rgba(0,0,0,.5);
+        }
+        img:nth-child(1){
+            transform: rotateY(0deg) translateZ(196px);
+        }
+        img:nth-child(2){
+            transform: rotateY(40deg) translateZ(196px);
+        }
+        img:nth-child(3){
+            transform: rotateY(80deg) translateZ(196px);
+        }
+        img:nth-child(4){
+            transform: rotateY(120deg) translateZ(196px);
+        }
+        img:nth-child(5){
+            transform: rotateY(160deg) translateZ(196px);
+        }
+        img:nth-child(6){
+            transform: rotateY(200deg) translateZ(196px);
+        }
+        img:nth-child(7){
+            transform: rotateY(240deg) translateZ(196px);
+        }
+        img:nth-child(8){
+            transform: rotateY(280deg) translateZ(196px);
+        }
+        img:nth-child(9){
+            transform: rotateY(320deg) translateZ(196px);
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="stage">
+    <div class="container" id="container">
+        <img width="128px" src="1.jpg"/>
+        <img width="128px" src="2.jpg"/>
+        <img width="128px" src="3.jpg"/>
+        <img width="128px" src="4.jpg"/>
+        <img width="128px" src="5.jpg"/>
+        <img width="128px" src="6.jpg"/>
+        <img width="128px" src="7.jpg"/>
+        <img width="128px" src="8.jpg"/>
+        <img width="128px" src="9.jpg"/>
+    </div>
+
+</div>
+</body>
+</html>
+
+<script type="text/javascript">
+    var container = $('#container');
+    var click_count = 0;
+    container.click(function () {
+        click_count += 1;
+        $(this).css('transform', 'rotateY(' + 40 * parseInt(click_count) + 'deg)');
+    });
+    
+
+</script>
